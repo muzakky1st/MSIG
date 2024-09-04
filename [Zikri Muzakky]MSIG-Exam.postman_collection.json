@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "1400fb80-680e-4cb2-a71d-1263b749cbd2",
+		"name": "MSIG-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Phone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phoneNumber\" : \"081276513961\",\r\n    \"phoneOwner\" : \"Muzakky\",\r\n    \"phoneType\": \"IOS\",\r\n    \"provider\" : \"Telkomsel\",\r\n    \"isStatus\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8077/api/phone-application/phoneApplication/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8077",
+					"path": [
+						"api",
+						"phone-application",
+						"phoneApplication",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail Phone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url-phone-service}}/phoneApplication/detail?id=1",
+					"host": [
+						"{{url-phone-service}}"
+					],
+					"path": [
+						"phoneApplication",
+						"detail"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Phone",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url-phone-service}}/phoneApplication/delete?id=1",
+					"host": [
+						"{{url-phone-service}}"
+					],
+					"path": [
+						"phoneApplication",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Phone",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url-phone-service}}/phoneApplication/update",
+					"host": [
+						"{{url-phone-service}}"
+					],
+					"path": [
+						"phoneApplication",
+						"update"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Phone",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url-phone-service}}/phoneApplication/search?request=Muzakky",
+					"host": [
+						"{{url-phone-service}}"
+					],
+					"path": [
+						"phoneApplication",
+						"search"
+					],
+					"query": [
+						{
+							"key": "request",
+							"value": "Muzakky"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Phone",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url-phone-service}}/phoneApplication/list",
+					"host": [
+						"{{url-phone-service}}"
+					],
+					"path": [
+						"phoneApplication",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url-phone-service",
+			"value": "http://localhost:8077/api/phone-application"
+		}
+	]
+}
